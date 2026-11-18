@@ -2,6 +2,13 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Get a Free Quote | Cairns Builders Clean</title>
 <meta name="robots" content="index, follow">
+<meta name="description" content="Get a free, fixed quote for a builders clean in Cairns. New builds, renovations, rough & sparkle and pre-handover cleans. Reply within one business day.">
+<link rel="canonical" href="https://cairnsbuildersclean.com.au/quote.html">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Cairns Builders Clean">
+<meta property="og:title" content="Get a Free Quote | Cairns Builders Clean"><meta property="og:description" content="Get a free, fixed quote for a builders clean in Cairns. New builds, renovations, rough & sparkle and pre-handover cleans. Reply within one business day.">
+<meta property="og:url" content="https://cairnsbuildersclean.com.au/quote.html"><meta property="og:image" content="https://cairnsbuildersclean.com.au/images/job-kitchen.jpg">
+<meta name="theme-color" content="#111111">
+<link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -279,7 +286,13 @@ form{background:#fff;border:1px solid var(--line);padding:32px 28px}
   f.addEventListener('submit',function(e){
     e.preventDefault(); d.hidden=false;
     if(!f.name.value.trim()||!f.phone.value.trim()||!f.service.value){d.textContent='Please add the service, your name and phone number.';return;}
-    d.textContent='Thanks '+f.name.value.trim()+'! This preview isn\'t connected to an inbox yet, so please call or text 0419 382 733 for now.';
+    var data={}; new FormData(f).forEach(function(v,k){data[k]=v;});
+    data._subject='New Cairns quote request - '+data.name; data.site='Cairns Builders Clean';
+    var btn=f.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Sending...';
+    fetch('https://formspree.io/f/xnjkvdoo',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+    .then(function(r){ if(!r.ok) throw 0;
+      f.innerHTML='<div style="text-align:center;padding:40px 0"><h3 style="margin-bottom:10px">Thanks, we\'ve got it.</h3><p>We\'ll be in touch within one business day. Need us sooner? Call <a href="tel:0419382733" style="color:#D89A1E;font-weight:600">0419 382 733</a>.</p></div>'; })
+    .catch(function(){ btn.disabled=false; btn.textContent='Send my quote request'; d.textContent='Sorry, that didn\'t send. Please call or text 0419 382 733 and we\'ll sort your quote.'; });
   });
 })();
 </script>
