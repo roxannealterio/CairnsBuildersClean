@@ -116,21 +116,21 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .svc p{font-size:.92rem}
 
 .hr-wrap{position:relative}
-.hr-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;scrollbar-width:none;padding-bottom:4px}
+.hr-track{display:flex;gap:18px;max-width:960px;margin:0 auto;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;scrollbar-width:none;padding-bottom:4px}
 .hr-track::-webkit-scrollbar{display:none}
-.hr-track figure{flex:0 0 calc((100% - 36px)/3);scroll-snap-align:start;margin:0}
-.hr-track img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;display:block}
-.hr-track figcaption{font-size:.8rem;font-weight:700;color:#111;letter-spacing:.08em;text-transform:uppercase;padding-top:12px}
+.hr-track figure{flex:0 0 calc((100% - 54px)/4);scroll-snap-align:start;margin:0}
+.hr-track img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;display:block}
+.hr-track figcaption{font-size:.8rem;font-weight:700;color:#111;letter-spacing:.08em;text-transform:uppercase;padding-top:10px}
 .hr-nav{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:22px}
 .hr-nav button{width:48px;height:48px;border:1px solid #E6E6E6;background:#fff;color:#111;cursor:pointer;font-size:1.2rem;transition:.2s}
 .hr-nav button:hover{background:#F2B233;border-color:#F2B233}
 .hr-nav button:disabled{opacity:.35;cursor:default;background:#fff;border-color:#E6E6E6}
 .hr-hint{text-align:center;color:#7A7A7A;font-size:.8rem;margin-top:10px}
-@media(max-width:760px){.hr-track figure{flex-basis:80%}.hr-track{gap:12px}}
+@media(max-width:760px){.hr-track figure{flex-basis:calc((100% - 10px)/2.15)}.hr-track{gap:10px}.hr-track figcaption{font-size:.68rem;padding-top:8px}.hr-nav{display:none}.hr-hint{margin-top:12px}}
 
 .work figure{margin:0}
-.work img{width:100%;aspect-ratio:4/5;object-fit:cover}
-.work figcaption{font-size:.8rem;font-weight:700;color:var(--ink);letter-spacing:.08em;text-transform:uppercase;padding-top:12px}
+.work img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.work figcaption{font-size:.8rem;font-weight:700;color:var(--ink);letter-spacing:.08em;text-transform:uppercase;padding-top:10px}
 
 .why{display:flex;flex-wrap:wrap}
 .why-copy{flex:1 1 50%;min-width:min(320px,100%);background:var(--ink);color:#fff;padding-block:76px;padding-left:max(28px,env(safe-area-inset-left,0px));padding-right:max(28px,env(safe-area-inset-right,0px))}
@@ -328,7 +328,7 @@ form{background:#fff;border:1px solid var(--line);padding:32px 28px}
       <header class="head center">
         <p class="eyebrow">Recent work</p>
         <h2 class="title">Handover ready</h2>
-        <p class="intro">After shots from one of our recent handovers. Kitchen, bathroom, bedrooms and windows, all detailed.</p>
+        <p class="intro">A recent handover: kitchen, bathroom, bedrooms and windows, all detailed.</p>
       </header>
       <div class="hr-wrap"><div class="hr-track" tabindex="0" aria-label="Recent work photos">
 <figure><img src="images/job-kitchen.jpg" width="1050" height="1400" alt="Clean white kitchen with stone benchtops" loading="lazy"><figcaption>Kitchen</figcaption></figure>
@@ -446,7 +446,7 @@ form{background:#fff;border:1px solid var(--line);padding:32px 28px}
       </ul></div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 Cairns Builders Clean. All rights reserved.</span>
+      <span>&copy; 2026 Cairns Builders Clean. All rights reserved. ABN 80 241 124 181.</span>
       <span><a href="tel:0419382733">Call or text 0419 382 733</a></span>
     </div>
   </div>
